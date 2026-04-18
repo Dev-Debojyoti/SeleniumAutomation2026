@@ -10,12 +10,9 @@ import java.util.List;
 public class BasicLocators {
     public static void main(String[] args) {
 
-        String Url1 = "https://www.demoblaze.com/";
-//        String Url2 = "https://parabank.parasoft.com/parabank/index.htm";
-
-        WebDriver driver;
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        String Url1 = "https://demo.nopcommerce.com/";
+//        String Url2 = "https://www.demoblaze.com/";
+//        String Url3 = "https://parabank.parasoft.com/parabank/index.htm";
 
 
         // id
@@ -98,12 +95,42 @@ public class BasicLocators {
 //        driver.findElement(By.linkText("Cart")).click();
 
         // Classname
+//        driver.get(Url1);
+//        List <WebElement> links = driver.findElements(By.className("navbar-collapse"));
+//        System.out.println("Total number of navbar links present are " + links.size());
+
+        // Tagname
+
+        WebDriver driver;
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+
         driver.get(Url1);
-        List <WebElement> links = driver.findElements(By.className("navbar-collapse"));
-        System.out.println("Total number of navbar links present are " + links.size());
+
+//        List <WebElement> allLinks = driver.findElements(By.tagName("a"));
+//        System.out.println("The total number of links present in this page is : " + allLinks.size());
+
+        // no locator present like this example -->>
+
+//        List <WebElement> allImagesLink = driver.findElements(By.tagName("imgaaaa"));
+//        System.out.println("The total number of image links present in this page is : " + allImagesLink);
 
 
-
-
+        driver.quit();
     }
 }
+
+// Locators matching (Single Web element) => findElement()   in WebElement.
+// Locators matching (Multiple Web elements) need to store it in => findElements() in List<WebElement> collection.
+
+// Scenario 1  => If locator matching with single webElement.
+//findElement(locators) ==> Single Web Element.
+// findElements(locators) ==> Single Web Element.
+
+// Scenario 2  => If locator matching with multiple webElement.
+//findElement(locators) ==> Single Web Element(first).
+// findElements(locators) ==> multiple Web Element.
+
+// Scenario 1  => If locator matching with no webElement.
+//findElement(locators) ==> no such element exception.
+// findElements(locators) ==> 0 or blank array [].
