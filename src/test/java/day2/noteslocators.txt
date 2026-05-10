@@ -1,0 +1,14 @@
+// Locators matching (Single Web element) => findElement()   in WebElement.
+// Locators matching (Multiple Web elements) need to store it in => findElements() in List<WebElement> collection.
+
+// Scenario 1  => If locator matching with single webElement.
+//findElement(locators) ==> Single Web Element.
+// findElements(locators) ==> Single Web Element.
+
+// Scenario 2  => If locator matching with multiple webElement.
+//findElement(locators) ==> Single Web Element(first).
+// findElements(locators) ==> multiple Web Element.
+
+// Scenario 1  => If locator matching with no webElement.
+//findElement(locators) ==> no such element exception.
+// findElements(locators) ==> 0 or blank array [].
